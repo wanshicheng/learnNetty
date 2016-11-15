@@ -3,9 +3,11 @@ package org.wanshicheng.learnNetty.net.url;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.net.URL;
 
 /**
+ * URL类主要用于从服务器下载数据
  * @author Timothy Wan
  */
 public class URLTest {
@@ -15,6 +17,9 @@ public class URLTest {
             System.out.println("port: " + url.getPort());
             System.out.println("default port: " + url.getDefaultPort());
             System.out.println("protocol: " + url.getProtocol());
+            System.out.println(url.toString());
+            System.out.println(url.toURI());
+            System.out.println(url.toExternalForm());
             InputStream is = url.openStream();
             int c;
             while ((c = is.read()) != -1) System.out.write(c);
@@ -22,6 +27,8 @@ public class URLTest {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (URISyntaxException e) {
             e.printStackTrace();
         }
     }
