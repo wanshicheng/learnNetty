@@ -11,7 +11,10 @@ import java.net.URL;
 public class URLTest {
     public static void main(String[] args) {
         try {
-            URL url = new URL("http://www.wanshicheng.org");
+            URL url = new URL("http://www.baidu.com");
+            System.out.println("port: " + url.getPort());
+            System.out.println("default port: " + url.getDefaultPort());
+            System.out.println("protocol: " + url.getProtocol());
             InputStream is = url.openStream();
             int c;
             while ((c = is.read()) != -1) System.out.write(c);
