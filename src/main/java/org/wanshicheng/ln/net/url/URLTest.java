@@ -1,4 +1,4 @@
-package org.wanshicheng.learnNetty.net.url;
+package org.wanshicheng.ln.net.url;
 
 import java.io.IOException;
 import java.io.InputStream;

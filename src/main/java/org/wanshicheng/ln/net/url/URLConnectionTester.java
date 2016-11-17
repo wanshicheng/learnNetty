@@ -1,4 +1,4 @@
-package org.wanshicheng.learnNetty.net;
+package org.wanshicheng.ln.net.url;
 
 import org.junit.Test;
 
