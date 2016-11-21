@@ -48,5 +48,5 @@ fabric.properties
 /learnNetty.iml
 /target/
 .idea/
-learnNetty.iml
+*.iml
 target/
