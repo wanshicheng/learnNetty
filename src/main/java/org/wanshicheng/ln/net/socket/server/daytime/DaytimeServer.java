@@ -1,12 +1,15 @@
-package org.wanshicheng.ln.np;
+package org.wanshicheng.ln.net.socket.server.daytime;
 
-import java.net.*;
-import java.io.*;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.util.Date;
- 
+
 public class DaytimeServer {
  
-  public final static int PORT = 13;
+  public final static int PORT = 8080;
 
   public static void main(String[] args) {  
    try (ServerSocket server = new ServerSocket(PORT)) {

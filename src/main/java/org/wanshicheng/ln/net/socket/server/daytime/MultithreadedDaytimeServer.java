@@ -1,12 +1,12 @@
-package org.wanshicheng.ln.np;
+package org.wanshicheng.ln.net.socket.server.daytime;
 
 import java.net.*;
 import java.io.*;
 import java.util.Date;
  
 public class MultithreadedDaytimeServer {
- 
-  public final static int PORT = 13;
+ //正常为13
+  public final static int PORT = 8080;
 
   public static void main(String[] args) {   
    try (ServerSocket server = new ServerSocket(PORT)) {
@@ -43,7 +43,7 @@ public class MultithreadedDaytimeServer {
         try {
           connection.close();
         } catch (IOException e) {
-          // ignore;
+          e.printStackTrace();
         }
       }
     }

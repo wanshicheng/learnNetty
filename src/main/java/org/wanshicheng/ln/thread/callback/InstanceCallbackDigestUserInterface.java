@@ -1,4 +1,4 @@
-package org.wanshicheng.ln.np;
+package org.wanshicheng.ln.thread.callback;
 
 import javax.xml.bind.*; // for DatatypeConverter; requires Java 6 or JAXB 1.0
 

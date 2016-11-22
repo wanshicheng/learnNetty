@@ -1,9 +1,11 @@
-package org.wanshicheng.ln.np;
+package org.wanshicheng.ln.net.socket.server.time;
 
-import java.io.*;
-import java.net.*;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.util.Date;
- 
+
 public class TimeServer {
  
   public final static int PORT = 37;

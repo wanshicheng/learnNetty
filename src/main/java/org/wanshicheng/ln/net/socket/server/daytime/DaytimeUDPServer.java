@@ -1,9 +1,11 @@
-package org.wanshicheng.ln.np;
+package org.wanshicheng.ln.net.socket.server.daytime;
 
-import java.net.*;
+import java.io.IOException;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
 import java.util.Date;
-import java.util.logging.*;
-import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class DaytimeUDPServer {
 

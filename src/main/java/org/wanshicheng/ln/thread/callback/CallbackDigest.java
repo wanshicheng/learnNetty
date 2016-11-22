@@ -1,9 +1,9 @@
-package org.wanshicheng.ln.np;
+package org.wanshicheng.ln.thread.callback;
 
 import java.io.*;
 import java.security.*;
 
-public class CallbackDigest implements Runnable {
+public class  CallbackDigest implements Runnable {
 
   private String filename;
 

@@ -1,54 +1,42 @@
 package org.wanshicheng.ln.thread;
 
-import javax.xml.bind.DatatypeConverter;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.nio.channels.Pipe;
-import java.security.DigestInputStream;
-import java.security.MessageDigest;
+import java.io.*;
+import java.security.*;
+import javax.xml.bind.*; // for DatatypeConverter; requires Java 6 or JAXB 1.0
 
-/**
- * @author Timothy Wan
- * @date 2016/11/21 9:56
- */
 public class DigestThread extends Thread {
-    private String filename;
 
-    public DigestThread(String filename) {
-        this.filename = filename;
+  private String filename;
+
+  public DigestThread(String filename) {
+   this.filename = filename;
+  }
+
+  @Override
+  public void run() {
+    try {
+      FileInputStream in = new FileInputStream(filename);
+      MessageDigest sha = MessageDigest.getInstance("SHA-256");
+      DigestInputStream din = new DigestInputStream(in, sha);
+      while (din.read() != -1) ;
+      din.close();
+      byte[] digest = sha.digest();
+      
+      StringBuilder result = new StringBuilder(filename);
+      result.append(": ");
+      result.append(DatatypeConverter.printHexBinary(digest));
+      System.out.println(result);
+    } catch (IOException ex) {
+      System.err.println(ex);
+    } catch (NoSuchAlgorithmException ex) {
+      System.err.println(ex);
     }
-
-    @Override
-    public void run() {
-        try {
-            FileInputStream in = new FileInputStream(filename);
-            MessageDigest sha = MessageDigest.getInstance("SHA-256");
-            DigestInputStream din = new DigestInputStream(in,sha);
-            while(din.read() != -1) ;
-            din.close();
-            byte[] digest = sha.digest();
-
-            StringBuilder result = new StringBuilder(filename);
-            result.append(": ");
-            result.append(DatatypeConverter.printHexBinary(digest));
-            System.out.println(result);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+  }
+  
+  public static void main(String[] args) {
+    for (String filename : args) {
+      Thread t = new DigestThread(filename);
+      t.start();
     }
-
-    public static void main(String[] args) {
-        File directory	= new File(".");
-        try {
-            System.out.println(directory.getCanonicalPath());
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Thread t = new DigestThread("test.txt");
-        t.start();
-    }
+  }
 }

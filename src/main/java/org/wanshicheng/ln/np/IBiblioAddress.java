@@ -2,7 +2,7 @@ package org.wanshicheng.ln.np;
 
 import java.net.*;
 
-public class IBiblioAliases {
+class IBiblioAliases {
 
   public static void main (String args[]) {
     try {

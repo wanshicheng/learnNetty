@@ -1,9 +1,13 @@
-package org.wanshicheng.ln.np;
+package org.wanshicheng.ln.net.socket;
 
-import java.net.*;
-import java.text.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.Socket;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.io.*;
 
 public class Daytime {
   

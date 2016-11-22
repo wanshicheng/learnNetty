@@ -1,14 +1,14 @@
-package org.wanshicheng.ln.np;
+package org.wanshicheng.ln.thread;
 
 import java.io.*;
 import java.security.*;
 import javax.xml.bind.*; // for DatatypeConverter; requires Java 6 or JAXB 1.0
 
-public class DigestThread extends Thread {
+public class DigestRunnable implements Runnable {
 
   private String filename;
 
-  public DigestThread(String filename) {
+  public DigestRunnable(String filename) {
    this.filename = filename;
   }
 
@@ -35,7 +35,8 @@ public class DigestThread extends Thread {
   
   public static void main(String[] args) {
     for (String filename : args) {
-      Thread t = new DigestThread(filename);
+      DigestRunnable dr = new DigestRunnable(filename);
+      Thread t = new Thread(dr);
       t.start();
     }
   }

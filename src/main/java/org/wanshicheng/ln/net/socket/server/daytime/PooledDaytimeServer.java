@@ -1,4 +1,4 @@
-package org.wanshicheng.ln.np;
+package org.wanshicheng.ln.net.socket.server.daytime;
 
 import java.io.*;
 import java.net.*;
@@ -6,8 +6,8 @@ import java.util.*;
 import java.util.concurrent.*;
  
 public class PooledDaytimeServer {
- 
-  public final static int PORT = 13;
+  //默认端口13
+  public final static int PORT = 8080;
 
   public static void main(String[] args) {  
    
