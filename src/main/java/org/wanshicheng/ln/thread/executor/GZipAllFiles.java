@@ -1,7 +1,8 @@
-package org.wanshicheng.ln.np;
+package org.wanshicheng.ln.thread.executor;
 
-import java.io.*;
-import java.util.concurrent.*;
+import java.io.File;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class GZipAllFiles {
   

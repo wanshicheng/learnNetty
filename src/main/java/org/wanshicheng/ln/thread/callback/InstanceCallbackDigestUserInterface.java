@@ -42,3 +42,10 @@ public class InstanceCallbackDigestUserInterface {
     } 
   }
 }
+/**
+ * 与CallbackDigestUserIntrface相比，稍微复杂一些
+ * 优点：
+ * 1、主类的实例只映射至一个文件，可以
+ *
+ */
+
